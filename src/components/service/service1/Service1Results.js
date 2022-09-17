@@ -31,7 +31,7 @@ const Service1Results = () => {
         }
 
         const getResults = async () => {
-            console.log(jsonArr);
+            // console.log(jsonArr);
 
             const parsedUrlEncodedData = JSON.stringify(jsonArr);
 

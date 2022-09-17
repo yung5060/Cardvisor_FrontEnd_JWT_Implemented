@@ -4,7 +4,7 @@ import useAuth from "../hooks/useAuth";
 import axios from "../api/axios";
 import styles from "./Login.module.css";
 
-const LOGIN_URL = "/api/auth/signin";
+const LOGIN_URL = "/auth/signin";
 
 const Login = () => {
     const { setAuth } = useAuth();

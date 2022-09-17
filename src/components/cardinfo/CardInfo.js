@@ -665,7 +665,7 @@ function CardInfo() {
                         </div>
                     </div>
 
-                    {console.log(cardInfo.fee)}
+                    {/*{console.log(cardInfo.fee)}*/}
 
                     <div className={styles.mainText3}>
                         안내 사항
