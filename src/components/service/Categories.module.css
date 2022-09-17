@@ -1,0 +1,73 @@
+.summaryZone {
+    width: 60vw;
+    height: 70px;
+    margin: 0px auto;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: 0px 5px 10px 0px rgba(150, 150, 150, 0.3);
+    border-radius: 8px 8px 8px 8px;
+    transition: 0.5s;
+}
+
+.summaryZone::marker {
+    font-size: 0px;
+}
+
+.summaryZone:hover {
+    background-color: rgba(0, 200, 200, 0.3);
+}
+
+.categoryIcon {
+    height: 40px;
+    margin-left: 30px;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.categoryNameKor {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: rgb(0, 200, 200);
+    position: relative;
+    top: 5px;
+}
+
+.categoryNameEng {
+    margin-left: 10px;
+    position: relative;
+    font-size: 1.2rem;
+    color: rgb(150, 150, 150);
+    position: relative;
+    top: 5px;
+}
+
+details[open] > .summaryZone {
+    background-color: rgb(0, 200, 200);
+    border-radius: 8px 8px 0px 0px;
+    transition: 0.5s;
+}
+
+details[open] > .summaryZone .categoryIcon {
+    filter: invert();
+}
+
+details[open] > .summaryZone .categoryNameKor {
+    color: rgb(255, 255, 255);
+}
+
+details[open] > .summaryZone .categoryNameEng {
+    color: rgb(255, 255, 255);
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .summaryZone {
+        width: 90vw;
+        margin-left: 5vw;
+    }
+}

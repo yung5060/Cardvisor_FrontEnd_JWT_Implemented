@@ -1,0 +1,51 @@
+.iconbox {
+    width: 1fr;
+    height: 120px;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: 0px 5px 10px 0px rgba(150, 150, 150, 0.3);
+    color: rgb(100, 100, 100);
+    font-size: 1.5rem;
+    user-select: none;
+    transition: 0.5s;
+}
+
+.iconbox:hover {
+    background-color: rgba(250, 150, 0, 0.3);
+    cursor: pointer;
+}
+
+.brandLogo {
+    text-align: center;
+}
+
+.brandLogo img {
+    width: 120px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.brandNameKor {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 1.1rem;
+    font-weight: 1000;
+    text-align: center;
+    border-top: 1px solid rgb(180, 180, 180);
+    padding-top: 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~.iconbox {
+    background-color: rgb(250, 150, 0);
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked~.iconbox .brandNameKor {
+    border-top: 1px solid rgb(255, 255, 255);
+}

@@ -1,0 +1,79 @@
+.header {
+    position: fixed;
+    width: 100vw;
+    max-width: 100%;
+    height: 80px;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1.5px solid rgb(200, 200, 200);
+    background-color: white;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    gap: 10px;
+}
+
+.titleLogo {
+    height: 80px;
+    margin-left: 20vw;
+    cursor: pointer;
+}
+
+.button1 {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(160, 160, 160);
+    border-radius: 5px;
+    margin-right: 20vw;
+    align-self: center;
+    justify-self: right;
+    cursor: pointer;
+}
+
+.button2 {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(250, 150, 0);
+    border-radius: 5px;
+    margin-right: 20vw;
+    align-self: center;
+    justify-self: right;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .header {
+        grid-template-columns: 1fr 80px 80px;
+        gap: 5px;
+    }
+
+    .titleLogo {
+        margin-left: 5vw;
+    }
+
+    .button1 {
+        margin-right: 5vw;
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1rem;
+    }
+
+    .button2 {
+        margin-right: 5vw;
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1rem;
+    }     
+}

@@ -1,0 +1,52 @@
+.serviceRow {
+    display: block;
+    margin: 0px auto;
+    width: 60vw;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+}
+
+.sendButton {
+    display: block;
+    margin: 0px auto;
+    width: 60vw;
+    height: 70px;
+    font-size: 1.8rem;
+    background-color: rgb(250, 150, 0);
+    color: rgb(255, 255, 255);
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toMainButton {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 100px;
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
+    background-color: rgb(160, 160, 160);
+    color: rgb(255, 255, 255);
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .serviceRow {
+        grid-template-columns: 1fr;
+        width: 90vw;
+        margin-left: 5vw;
+        transition: 0.5s;
+    }
+
+    .sendButton {
+        width: 90vw;
+        margin-left: 5vw;
+        transition: 0.5s;
+    }
+}
