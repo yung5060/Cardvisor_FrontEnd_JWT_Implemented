@@ -20,6 +20,8 @@ const Header = () => {
         navigate('/login');
     }
 
+    // console.log(auth?.accessToken);
+
     useEffect(() => {
         auth?.accessToken ? setIsLoggedIn(true) : setIsLoggedIn(false);
     }, [auth])
