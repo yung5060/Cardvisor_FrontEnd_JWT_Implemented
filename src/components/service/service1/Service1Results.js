@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import styles from "./Service1Results.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
 import Loading from "../../Loading";
 
 
@@ -221,7 +221,6 @@ const Service1Results = () => {
                                             ".png"
                                         }
                                     />
-
                                     <div className={styles.bestCardName}>
                                         {result.topTenCards[0].name}
                                     </div>
@@ -269,7 +268,6 @@ const Service1Results = () => {
                                     }
                                 </Slider>
                             </div>
-
 
 
                             <div className={styles.subText}>

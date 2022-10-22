@@ -5,7 +5,7 @@ import SelectedBrands from './SelectedBrands';
 import Categories from '../Categories';
 import Intro from '../../Intro';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useLocation} from "react-router";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
@@ -19,10 +19,10 @@ const Service1 =  () => {
     const [selNumber, setSelNumber] = useState(0);
     const [selArray, setSelArray] = useState([]);
     let jsonArr = [];
-
+    <Suspense>
     localStorage.clear();
     localStorage.setItem('isLoading', JSON.stringify(true));
-
+    </Suspense>
 
 
     function SelectedBrandsZone() {

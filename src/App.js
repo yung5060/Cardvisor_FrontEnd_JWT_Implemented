@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
