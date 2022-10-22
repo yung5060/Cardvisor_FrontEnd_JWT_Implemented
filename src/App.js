@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
@@ -33,6 +32,8 @@ const ROLES = {
 
 function App() {
     // const [isLogined, setIsLogined] = useState(window.localStorage.getItem("accessToken"));
+
+    const [progress, setProgress] = useState(true);
 
     return (
         <main className="App">

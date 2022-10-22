@@ -7,13 +7,21 @@ import Intro from '../../Intro';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useLocation} from "react-router";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 
 
-const Service1 = () => {
+const Service1 =  () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const axiosPrivate = useAxiosPrivate();
     const [selNumber, setSelNumber] = useState(0);
     const [selArray, setSelArray] = useState([]);
+    let jsonArr = [];
+
+    localStorage.clear();
+    localStorage.setItem('isLoading', JSON.stringify(true));
 
 
 
@@ -422,6 +430,34 @@ const Service1 = () => {
                         }
 
                         else {
+                            for (let i = SelectedBrands.length - 1; i >= 0; i--) {
+                                jsonArr[i] = { memberId: 1, brandName: SelectedBrands[i] };
+                                // SelectedBrands 리스트 비우기!!!
+                                SelectedBrands.pop();
+                            }
+
+                            const getResults = async () => {
+                                // console.log(jsonArr);
+
+                                const parsedUrlEncodedData = JSON.stringify(jsonArr);
+
+                                try {
+                                    const response = await axiosPrivate({
+                                        method: "POST",
+                                        url: "/benefit/select",
+                                        data: parsedUrlEncodedData,
+                                    });
+                                    setTimeout(() => {
+                                        localStorage.setItem('serviceone', JSON.stringify(response.data));
+                                        localStorage.setItem('isLoading', JSON.stringify(false));
+                                    }, 500)
+                                } catch (err) {
+                                    console.error(err);
+                                    navigate('/login', { state: { from: location }, replace: true });
+                                }
+                            }
+
+                            getResults();
                             navigate("/service1/results");
                         }
                     }}>
