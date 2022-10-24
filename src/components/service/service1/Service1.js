@@ -5,7 +5,7 @@ import SelectedBrands from './SelectedBrands';
 import Categories from '../Categories';
 import Intro from '../../Intro';
 
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useLocation} from "react-router";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
@@ -19,10 +19,8 @@ const Service1 =  () => {
     const [selNumber, setSelNumber] = useState(0);
     const [selArray, setSelArray] = useState([]);
     let jsonArr = [];
-    <Suspense>
+
     localStorage.clear();
-    localStorage.setItem('isLoading', JSON.stringify(true));
-    </Suspense>
 
 
     function SelectedBrandsZone() {
@@ -449,16 +447,15 @@ const Service1 =  () => {
                                     });
                                     setTimeout(() => {
                                         localStorage.setItem('serviceone', JSON.stringify(response.data));
-                                        localStorage.setItem('isLoading', JSON.stringify(false));
-                                    }, 500)
+                                        navigate("/service1/results");
+                                    }, 100)
                                 } catch (err) {
                                     console.error(err);
                                     navigate('/login', { state: { from: location }, replace: true });
                                 }
                             }
-
                             getResults();
-                            navigate("/service1/results");
+                            navigate('/loading', { state: { from: location }, replace: true });
                         }
                     }}>
                         {selNumber}개 혜택 선택 완료

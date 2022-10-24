@@ -22,6 +22,7 @@ import Unauthorized from "./components/Unauthorized";
 import RequireAuth from "./components/RequireAuth";
 import Layout from "./components/Layout";
 import PersistLogin from "./components/PersistLogin";
+import Loading from "./components/Loading";
 
 const ROLES = {
     'User' : 'ROLE_USER',
@@ -33,7 +34,6 @@ const ROLES = {
 function App() {
     // const [isLogined, setIsLogined] = useState(window.localStorage.getItem("accessToken"));
 
-    const [progress, setProgress] = useState(true);
 
     return (
         <main className="App">
@@ -57,6 +57,7 @@ function App() {
                             <Route path="list" element={<List />} />
                             <Route path="cardinfo/:card_code" element={<CardInfo />} />
                             <Route path="mypage" element={<MyPage />} />
+                            <Route path="loading" element={<Loading message="데이터 분석중" />} />
                         </Route>
                     </Route>
 
